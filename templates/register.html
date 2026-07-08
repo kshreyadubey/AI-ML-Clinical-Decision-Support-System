@@ -4,7 +4,6 @@
 <head>
 
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>ArogyaAI | Complete Registration</title>
@@ -25,12 +24,35 @@
             Complete your profile to activate your ArogyaAI account.
         </p>
 
-        <form action="/register" method="POST">
+        {% if error %}
+
+        <div class="error">
+
+            {{ error }}
+
+        </div>
+
+        {% endif %}
+
+        {% if success %}
+
+        <div class="success">
+
+            {{ success }}
+
+        </div>
+
+        {% endif %}
+
+        <!-- SEND OTP FORM -->
+
+        <form action="/send-otp" method="POST">
 
             <input
                 type="text"
                 name="fullname"
                 placeholder="Full Name"
+                value="{{ fullname if fullname else '' }}"
                 required
             >
 
@@ -39,18 +61,35 @@
                 name="mobile"
                 placeholder="Mobile Number"
                 maxlength="10"
+                value="{{ mobile if mobile else '' }}"
                 required
             >
 
-            <div class="otp-row">
+            <button type="submit">
 
-                <button type="button" class="otp-btn">
+                SEND OTP
 
-                    Send OTP
+            </button>
 
-                </button>
+        </form>
 
-            </div>
+        <br>
+
+        <!-- REGISTER FORM -->
+
+        <form action="/register" method="POST">
+
+            <input
+                type="hidden"
+                name="fullname"
+                value="{{ fullname if fullname else '' }}"
+            >
+
+            <input
+                type="hidden"
+                name="mobile"
+                value="{{ mobile if mobile else '' }}"
+            >
 
             <input
                 type="text"
@@ -89,11 +128,15 @@
     <div class="footer-track">
 
         <span>
+
             🌿 Created by <b>K. Shreya Dubey</b> • ArogyaAI • AI Powered Clinical Decision Support System • Jindal Internship Project • 2026 •
+
         </span>
 
         <span>
+
             🌿 Created by <b>K. Shreya Dubey</b> • ArogyaAI • AI Powered Clinical Decision Support System • Jindal Internship Project • 2026 •
+
         </span>
 
     </div>

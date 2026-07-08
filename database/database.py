@@ -8,7 +8,6 @@ DATABASE_NAME = "database/users.db"
 # ==========================================
 
 def connect_db():
-
     return sqlite3.connect(DATABASE_NAME)
 
 
@@ -19,11 +18,9 @@ def connect_db():
 def create_database():
 
     conn = connect_db()
-
     cursor = conn.cursor()
 
     cursor.execute("""
-
     CREATE TABLE IF NOT EXISTS users(
 
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -41,11 +38,9 @@ def create_database():
         registered INTEGER DEFAULT 0
 
     )
-
     """)
 
     conn.commit()
-
     conn.close()
 
 
@@ -58,21 +53,15 @@ def insert_default_users():
     users = [
 
         ("dr_srikant", "Doctor@2026", "", "", "Doctor", 0),
-
         ("deepika", "Yoga@2026", "", "", "Yoga Therapist", 0),
-
         ("diet01", "Diet@2026", "", "", "Dietitian", 0),
-
         ("acu01", "Acu@2026", "", "", "Acupuncture Specialist", 0),
-
         ("patient01", "Patient@2026", "", "", "Patient", 0),
-
         ("shreya", "Shreya@2026", "", "", "Project Developer", 0)
 
     ]
 
     conn = connect_db()
-
     cursor = conn.cursor()
 
     for user in users:
@@ -87,18 +76,16 @@ def insert_default_users():
         """, user)
 
     conn.commit()
-
     conn.close()
 
 
 # ==========================================
-# CHECK LOGIN
+# CHECK USERNAME & PASSWORD
 # ==========================================
 
 def check_login(username, password):
 
     conn = connect_db()
-
     cursor = conn.cursor()
 
     cursor.execute("""
@@ -119,13 +106,38 @@ def check_login(username, password):
 
 
 # ==========================================
-# CHECK REGISTRATION STATUS
+# GET USER
+# ==========================================
+
+def get_user(username):
+
+    conn = connect_db()
+    cursor = conn.cursor()
+
+    cursor.execute("""
+
+    SELECT *
+
+    FROM users
+
+    WHERE username=?
+
+    """, (username,))
+
+    user = cursor.fetchone()
+
+    conn.close()
+
+    return user
+
+
+# ==========================================
+# CHECK REGISTRATION
 # ==========================================
 
 def is_registered(username):
 
     conn = connect_db()
-
     cursor = conn.cursor()
 
     cursor.execute("""
@@ -143,7 +155,6 @@ def is_registered(username):
     conn.close()
 
     if result:
-
         return result[0]
 
     return 0
@@ -156,7 +167,6 @@ def is_registered(username):
 def register_user(username, fullname, mobile):
 
     conn = connect_db()
-
     cursor = conn.cursor()
 
     cursor.execute("""
@@ -172,7 +182,6 @@ def register_user(username, fullname, mobile):
     """, (fullname, mobile, username))
 
     conn.commit()
-
     conn.close()
 
 
@@ -183,7 +192,6 @@ def register_user(username, fullname, mobile):
 if __name__ == "__main__":
 
     create_database()
-
     insert_default_users()
 
-    print("✅ ArogyaAI Database Created Successfully")
+    print("✅ Database Created Successfully")
