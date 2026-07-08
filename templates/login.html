@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ArogyaAI | Login</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="overlay">
+
+    <div class="login-card">
+
+        <h1>🌿 ArogyaAI</h1>
+
+        <p class="subtitle">
+            Guiding Care with Intelligence
+        </p>
+
+        {% if error %}
+
+        <div class="error">
+
+            {{ error }}
+
+        </div>
+
+        {% endif %}
+
+        <form action="/login" method="POST">
+
+            <input
+                type="text"
+                name="username"
+                placeholder="Username"
+                required
+            >
+
+            <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                required
+            >
+
+            <div class="options">
+
+                <label>
+
+                    <input type="checkbox">
+
+                    Remember Me
+
+                </label>
+
+                <a href="#">
+
+                    Forgot Password?
+
+                </a>
+
+            </div>
+
+            <button type="submit">
+
+                LOGIN
+
+            </button>
+
+        </form>
+
+        <div class="register">
+            <span>New User?</span>
+             <a href="/verify">Register</a>
+            </div>
+
+    </div>
+
+</div>
+
+<div class="footer">
+
+    <div class="footer-track">
+
+        <span>
+
+            🌿 Created by <b>K. Shreya Dubey</b> • ArogyaAI • AI Powered Clinical Decision Support System • Jindal Internship Project • 2026 •
+
+        </span>
+
+        <span>
+
+            🌿 Created by <b>K. Shreya Dubey</b> • ArogyaAI • AI Powered Clinical Decision Support System • Jindal Internship Project • 2026 •
+
+        </span>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

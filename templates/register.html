@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ArogyaAI | Complete Registration</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="overlay center">
+
+    <div class="register-card">
+
+        <h1>🌿 Complete Registration</h1>
+
+        <p>
+            Complete your profile to activate your ArogyaAI account.
+        </p>
+
+        <form action="/register" method="POST">
+
+            <input
+                type="text"
+                name="fullname"
+                placeholder="Full Name"
+                required
+            >
+
+            <input
+                type="tel"
+                name="mobile"
+                placeholder="Mobile Number"
+                maxlength="10"
+                required
+            >
+
+            <div class="otp-row">
+
+                <button type="button" class="otp-btn">
+
+                    Send OTP
+
+                </button>
+
+            </div>
+
+            <input
+                type="text"
+                name="otp"
+                placeholder="Enter OTP"
+                maxlength="6"
+                required
+            >
+
+            <button type="submit">
+
+                REGISTER
+
+            </button>
+
+        </form>
+
+        <div class="back-login">
+
+            Already Registered?
+
+            <a href="/">
+
+                Login
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="footer">
+
+    <div class="footer-track">
+
+        <span>
+            🌿 Created by <b>K. Shreya Dubey</b> • ArogyaAI • AI Powered Clinical Decision Support System • Jindal Internship Project • 2026 •
+        </span>
+
+        <span>
+            🌿 Created by <b>K. Shreya Dubey</b> • ArogyaAI • AI Powered Clinical Decision Support System • Jindal Internship Project • 2026 •
+        </span>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
