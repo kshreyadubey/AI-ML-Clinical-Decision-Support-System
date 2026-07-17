@@ -64,7 +64,7 @@ def login():
 
     session["username"] = username
 
-    return redirect(url_for("dashboard"))
+    return redirect(url_for("welcome"))
 
 
 # =====================================================
@@ -247,6 +247,115 @@ def dashboard():
         fullname=user[3],
         role=user[5]
     )
+# =====================================================
+# PATIENT DASHBOARD
+# =====================================================
+
+@app.route("/patient-dashboard")
+def patient_dashboard():
+
+    return "<h1>Patient Dashboard - Coming Soon</h1>"
+
+
+# =====================================================
+# DIET DASHBOARD
+# =====================================================
+
+@app.route("/diet-dashboard")
+def diet_dashboard():
+
+    return "<h1>Dietitian Dashboard - Coming Soon</h1>"
+
+
+# =====================================================
+# YOGA DASHBOARD
+# =====================================================
+
+@app.route("/yoga-dashboard")
+def yoga_dashboard():
+
+    return "<h1>Yoga Dashboard - Coming Soon</h1>"
+
+
+# =====================================================
+# ACUPUNCTURE DASHBOARD
+# =====================================================
+
+@app.route("/acupuncture-dashboard")
+def acupuncture_dashboard():
+
+    return "<h1>Acupuncture Dashboard - Coming Soon</h1>"
+
+
+# =====================================================
+# DEVELOPER DASHBOARD
+# =====================================================
+
+@app.route("/developer-dashboard")
+def developer_dashboard():
+
+    return "<h1>Developer Dashboard - Coming Soon</h1>"
+# =====================================================
+# WELCOME PAGE
+# =====================================================
+
+@app.route("/welcome")
+def welcome():
+
+    if "username" not in session:
+
+        return redirect(url_for("home"))
+
+    user = get_user(session["username"])
+
+    return render_template(
+        "welcome.html",
+        username=user[1],
+        fullname=user[3],
+        role=user[5]
+    )
+
+
+# =====================================================
+# START APPLICATION
+# =====================================================
+
+@app.route("/start-application")
+def start_application():
+
+    if "username" not in session:
+
+        return redirect(url_for("home"))
+
+    user = get_user(session["username"])
+
+    role = user[5]
+
+    if role == "Doctor":
+
+        return redirect(url_for("dashboard"))
+
+    elif role == "Patient":
+
+        return redirect(url_for("patient_dashboard"))
+
+    elif role == "Dietitian":
+
+        return redirect(url_for("diet_dashboard"))
+
+    elif role == "Yoga Therapist":
+
+        return redirect(url_for("yoga_dashboard"))
+
+    elif role == "Acupuncture Specialist":
+
+        return redirect(url_for("acupuncture_dashboard"))
+
+    elif role == "Project Developer":
+
+        return redirect(url_for("developer_dashboard"))
+
+    return redirect(url_for("dashboard"))
 
 
 # =====================================================
