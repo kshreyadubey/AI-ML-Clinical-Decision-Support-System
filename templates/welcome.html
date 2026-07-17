@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ArogyaAI | Welcome</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/welcome.css') }}">
+
+</head>
+<script src="{{ url_for('static', filename='js/welcome.js') }}"></script>
+
+<body>
+
+<div class="bg-grid"></div>
+
+<div class="welcome-container">
+
+    <!-- ================= LEFT PANEL ================= -->
+
+    <section class="hero-panel">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+
+                <i class="fa-solid fa-seedling"></i>
+
+            </div>
+
+            <div>
+
+                <h2>ArogyaAI</h2>
+
+                <p>Clinical Decision Support System</p>
+
+            </div>
+
+        </div>
+
+        <h3 class="welcome-title">
+
+            Welcome to
+
+        </h3>
+
+        <h1 class="main-title">
+
+            Arogya<span>AI</span>
+
+        </h1>
+
+        <div class="title-bar"></div>
+
+        <p class="hero-description">
+
+            ArogyaAI combines Artificial Intelligence,
+            Machine Learning and Clinical Knowledge
+            to help healthcare professionals deliver
+            intelligent diagnoses, secure patient
+            management and smarter clinical decisions.
+
+        </p>
+
+        <div class="feature-list">
+
+            <div class="feature-card">
+
+                <i class="fa-solid fa-brain"></i>
+
+                <span>AI Powered</span>
+
+            </div>
+
+            <div class="feature-card">
+
+                <i class="fa-solid fa-shield-heart"></i>
+
+                <span>Secure Records</span>
+
+            </div>
+
+            <div class="feature-card">
+
+                <i class="fa-solid fa-user-doctor"></i>
+
+                <span>Doctor Assisted</span>
+
+            </div>
+
+        </div>
+
+        <a href="/start-application" class="begin-button">
+
+            Begin Application
+
+            <span>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </span>
+
+        </a>
+
+    </section>
+
+    <!-- ================= RIGHT PANEL ================= -->
+
+    <section class="hud-panel">
+
+        <div class="hud-glow"></div>
+
+        <div class="orbit-ring outer-ring"></div>
+
+        <div class="orbit-ring dotted-ring"></div>
+
+        <div class="orbit-ring neon-ring"></div>
+
+        <!-- Rotating Green Segments -->
+
+        <div class="ring-segments">
+
+            <span class="ring-segment segment-1"></span>
+
+            <span class="ring-segment segment-2"></span>
+
+            <span class="ring-segment segment-3"></span>
+
+            <span class="ring-segment segment-4"></span>
+
+            <span class="ring-segment segment-5"></span>
+
+            <span class="ring-segment segment-6"></span>
+
+        </div>
+
+        <!-- Orbit Icons -->
+
+        <div class="orbit-system">
+
+            <div class="orbit-icon icon-top">
+
+                <i class="fa-solid fa-heart-pulse"></i>
+
+            </div>
+
+            <div class="orbit-icon icon-top-right">
+
+                <i class="fa-solid fa-shield-heart"></i>
+
+            </div>
+
+            <div class="orbit-icon icon-bottom-right">
+
+                <i class="fa-solid fa-capsules"></i>
+
+            </div>
+
+            <div class="orbit-icon icon-bottom">
+
+                <i class="fa-regular fa-clipboard"></i>
+
+            </div>
+
+            <div class="orbit-icon icon-bottom-left">
+
+                <i class="fa-solid fa-stethoscope"></i>
+
+            </div>
+
+            <div class="orbit-icon icon-top-left">
+
+                <i class="fa-solid fa-dna"></i>
+
+            </div>
+
+        </div>
+
+        <!-- Doctor -->
+
+        <div class="doctor-frame">
+
+            <div class="doctor-glow"></div>
+
+            <img
+            src="{{ url_for('static', filename='images/doctor_patient.png') }}"
+            alt="Doctor">
+
+            <div class="scan-line"></div>
+
+        </div>
+
+    </section>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/welcome.js') }}"></script>
+
+</body>
+
+</html>
